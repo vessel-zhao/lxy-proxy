@@ -56,12 +56,13 @@ proxy-groups:
     - { name: 自动选择, type: url-test, proxies: ['剩余流量：827.35 GB', 套餐到期：长期有效, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇭🇰香港高速04|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇸🇬新加坡高速04|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇯🇵日本高速04|BGP|流媒体, 🇯🇵日本高速05|BGP|流媒体, 🇯🇵日本高速06|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇨🇳台湾高速01|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇨🇳台湾专线01|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇺🇸美国03|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: 故障转移, type: fallback, proxies: ['剩余流量：827.35 GB', 套餐到期：长期有效, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇭🇰香港高速04|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇸🇬新加坡高速04|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇯🇵日本高速04|BGP|流媒体, 🇯🇵日本高速05|BGP|流媒体, 🇯🇵日本高速06|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇨🇳台湾高速01|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇨🇳台湾专线01|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇺🇸美国03|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rule-providers:
-  AD:
+  adblock:
     type: http
     behavior: domain
-    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
-    path: ./rules/AD.yaml
-    interval: 86400
+    format: yaml
+    url: https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml
+    path: ./ruleset/adblock_reject.yaml
+    interval: 120
   Spotify:
     type: http
     behavior: domain
@@ -72,7 +73,7 @@ rules:
     - 'DOMAIN-KEYWORD,gemini,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,grok,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,chatgpt,🇸🇬新加坡'
-    - 'RULE-SET,AD,REJECT'
+    - RULE-SET,adblock,REJECT
     - 'RULE-SET,Spotify,🇸🇬新加坡自动'
     - 'IP-CIDR,1.1.1.1/32,良心云,no-resolve'
     - 'IP-CIDR,8.8.8.8/32,良心云,no-resolve'
