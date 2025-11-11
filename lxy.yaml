@@ -61,7 +61,7 @@ rule-providers:
     behavior: domain
     format: txt
     url: https://ghfast.top/https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
-    path: ./ruleset/adblock_reject.txt
+    path: ./ruleset/adblock_base.txt
     interval: 120
   ad_china:
     type: http
@@ -80,7 +80,7 @@ rules:
     - 'DOMAIN-KEYWORD,gemini,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,grok,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,chatgpt,🇸🇬新加坡'
-    - RULE-SET,adblock,REJECT
+    - RULE-SET,ad_base,REJECT
     - RULE-SET,ad_china,REJECT
     - 'RULE-SET,Spotify,🇸🇬新加坡自动'
     - 'IP-CIDR,1.1.1.1/32,良心云,no-resolve'
