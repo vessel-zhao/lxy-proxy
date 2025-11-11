@@ -63,7 +63,7 @@ rule-providers:
     url: https://ghfast.top/https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
     path: ./ruleset/adblock_reject.txt
     interval: 120
- ad_china:
+  ad_china:
     type: http
     behavior: domain
     format: txt
