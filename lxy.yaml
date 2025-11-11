@@ -56,19 +56,12 @@ proxy-groups:
     - { name: 自动选择, type: url-test, proxies: ['剩余流量：827.35 GB', 套餐到期：长期有效, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇭🇰香港高速04|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇸🇬新加坡高速04|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇯🇵日本高速04|BGP|流媒体, 🇯🇵日本高速05|BGP|流媒体, 🇯🇵日本高速06|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇨🇳台湾高速01|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇨🇳台湾专线01|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇺🇸美国03|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: 故障转移, type: fallback, proxies: ['剩余流量：827.35 GB', 套餐到期：长期有效, 🇭🇰香港高速01|BGP|流媒体, 🇭🇰香港高速02|BGP|流媒体, 🇭🇰香港高速03|BGP|流媒体, 🇭🇰香港高速04|BGP|流媒体, 🇸🇬新加坡高速01|BGP|流媒体, 🇸🇬新加坡高速02|BGP|流媒体, 🇸🇬新加坡高速03|BGP|流媒体, 🇸🇬新加坡高速04|BGP|流媒体, 🇯🇵日本高速01|BGP|流媒体, 🇯🇵日本高速02|BGP|流媒体, 🇯🇵日本高速03|BGP|流媒体, 🇯🇵日本高速04|BGP|流媒体, 🇯🇵日本高速05|BGP|流媒体, 🇯🇵日本高速06|BGP|流媒体, 🇺🇸美国高速01|流媒体, 🇰🇷韩国高速01|BGP|流媒体, 🇨🇳台湾高速01|BGP|流媒体, 🇭🇰香港专线02|BGP|流媒体, 🇭🇰香港专线03|BGP|流媒体, 🇸🇬新加坡专线02|BGP|流媒体, 🇸🇬新加坡专线03|BGP|流媒体, 🇯🇵日本专线02|BGP|流媒体, 🇯🇵日本专线03|BGP|流媒体, 🇰🇷韩国专线01|BGP|流媒体, 🇨🇳台湾专线01|BGP|流媒体, 🇺🇸美国01|流媒体, 🇺🇸美国02|流媒体, 🇺🇸美国03|流媒体], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rule-providers:
-  ad_base:
+  adblock:
     type: http
     behavior: domain
-    format: txt
-    url: https://ghfast.top/https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
-    path: ./ruleset/adblock_base.txt
-    interval: 120
-  ad_china:
-    type: http
-    behavior: domain
-    format: txt
-    url: https://ghfast.top/https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
-    path: ./ruleset/adblock_china.txt
+    format: yaml
+    url: https://ghfast.top/https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockmihomo.yaml
+    path: ./ruleset/adblockmihomo.yaml
     interval: 120
   Spotify:
     type: http
@@ -80,8 +73,7 @@ rules:
     - 'DOMAIN-KEYWORD,gemini,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,grok,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,chatgpt,🇸🇬新加坡'
-    - RULE-SET,ad_base,REJECT
-    - RULE-SET,ad_china,REJECT
+    - RULE-SET,adblock,REJECT
     - 'RULE-SET,Spotify,🇸🇬新加坡自动'
     - 'IP-CIDR,1.1.1.1/32,良心云,no-resolve'
     - 'IP-CIDR,8.8.8.8/32,良心云,no-resolve'
