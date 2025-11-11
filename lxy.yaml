@@ -59,32 +59,8 @@ rule-providers:
   AD:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/earoftoast/clash-rules/main/AD.yaml"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
     path: ./rules/AD.yaml
-    interval: 86400
-  EasyList:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/earoftoast/clash-rules/main/EasyList.yaml"
-    path: ./rules/EasyList.yaml
-    interval: 86400
-  EasyListChina:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/earoftoast/clash-rules/main/EasyListChina.yaml"
-    path: ./rules/EasyListChina.yaml
-    interval: 86400
-  EasyPrivacy:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/earoftoast/clash-rules/main/EasyPrivacy.yaml"
-    path: ./rules/EasyPrivacy.yaml
-    interval: 86400
-  ProgramAD:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml"
-    path: ./rules/ProgramAD.yaml
     interval: 86400
   Spotify:
     type: http
@@ -97,10 +73,6 @@ rules:
     - 'DOMAIN-KEYWORD,grok,🇸🇬新加坡'
     - 'DOMAIN-KEYWORD,chatgpt,🇸🇬新加坡'
     - 'RULE-SET,AD,REJECT'
-    - 'RULE-SET,EasyList,REJECT'
-    - 'RULE-SET,EasyListChina,REJECT'
-    - 'RULE-SET,EasyPrivacy,REJECT'
-    - 'RULE-SET,ProgramAD,REJECT'
     - 'RULE-SET,Spotify,🇸🇬新加坡自动'
     - 'IP-CIDR,1.1.1.1/32,良心云,no-resolve'
     - 'IP-CIDR,8.8.8.8/32,良心云,no-resolve'
